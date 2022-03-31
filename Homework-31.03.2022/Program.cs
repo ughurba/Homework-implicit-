@@ -7,10 +7,13 @@ namespace Homework_31._03._2022
         public enum Currecy { Usd = 1, Eur, Try }
         static void Main(string[] args)
         {
-            //Kelvin kelvin = new Kelvin(150);
-            //Celsius celsius = kelvin;
-            //Console.WriteLine(celsius.Degree);
-            Console.WriteLine("kurs qeyd edin ");
+            Kelvin kelvin = new Kelvin(150);
+            Celsius celsius = kelvin;
+            Console.WriteLine(celsius.Degree);
+
+
+
+            Console.WriteLine("1.Usd\n2.Eur\n3.Try");
             int num = int.Parse(Console.ReadLine());
 
             switch (num)
