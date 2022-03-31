@@ -7,9 +7,30 @@ namespace Homework_31._03._2022
         public enum Currecy { Usd = 1, Eur, Try }
         static void Main(string[] args)
         {
-            Kelvin kelvin = new Kelvin(150);
-            Celsius celsius = kelvin;
-            Console.WriteLine(celsius.Degree);
+            //Kelvin kelvin = new Kelvin(150);
+            //Celsius celsius = kelvin;
+            //Console.WriteLine(celsius.Degree);
+            Console.WriteLine("kurs qeyd edin ");
+            int num = int.Parse(Console.ReadLine());
+
+            switch (num)
+            {
+                case (int)Currecy.Usd:
+                    Console.WriteLine(Exchange(Currecy.Usd, 170));
+                    break;
+
+                case (int)Currecy.Eur:
+
+                    Console.WriteLine(Exchange(Currecy.Eur, 100));
+
+                     break;
+
+                case (int)Currecy.Try:
+
+                    Console.WriteLine(Exchange(Currecy.Try, 100));
+                    break;
+
+            }
             
 
 
@@ -20,14 +41,20 @@ namespace Homework_31._03._2022
             
             if (curs is Currecy)
             {
-                return azn * 1.7;
+                if(Currecy.Usd == curs)
+                {
+                    return azn * 0.59;
+                }else if (Currecy.Eur == curs)
+                {
+                    return azn * 0.53;
+                }else if (Currecy.Try == curs)
+                {
+                    return azn * 8.63;
+                }  
+       
             }
-            else
-            {
-                Console.WriteLine("wrong");
-                return -1;
-            }
-
+            Console.WriteLine("wrong");
+            return -1;
 
         }
 
